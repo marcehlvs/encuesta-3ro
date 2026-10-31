@@ -29,9 +29,9 @@ export const OPCIONES = [
 ];
 
 export const BLOQUES = [
-  { id: 'roles', titulo: 'Roles', bajada: 'Qué hacemos y qué nos falta como grupo.' },
-  { id: 'reglas', titulo: 'Reglas', bajada: 'Qué normas cumplimos y por qué a veces no.' },
-  { id: 'valores', titulo: 'Valores', bajada: 'Cómo nos tratamos, sobre todo cuando hay tensión.' },
+  { id: 'roles', emoji: '🎭', titulo: 'Roles', bajada: 'Qué hacemos y qué nos falta como grupo.' },
+  { id: 'reglas', emoji: '📏', titulo: 'Reglas', bajada: 'Qué normas cumplimos y por qué a veces no.' },
+  { id: 'valores', emoji: '⚖️', titulo: 'Valores', bajada: 'Cómo nos tratamos, sobre todo cuando hay tensión.' },
 ];
 
 export const TEMAS = [

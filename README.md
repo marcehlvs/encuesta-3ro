@@ -12,8 +12,8 @@ La encuesta está en `/` y el panel docente en `/panel`.
 
 ## Proyecto de Firebase propio
 
-Usá un **proyecto de Firebase nuevo**, distinto del de 1.° (una base de datos tiene un solo conjunto de reglas
-y el botón «Borrar datos» elimina todas las respuestas). Reemplazá el ID en `.firebaserc`.
+Usá un **proyecto de Firebase nuevo**, distinto del de 1.° y del de 2.° (una base de datos tiene un solo conjunto de reglas
+y el botón «Reiniciar encuesta» elimina todas las respuestas). Reemplazá el ID en `.firebaserc`.
 
 ## Puesta en marcha (una sola vez)
 
@@ -58,9 +58,11 @@ es responder «nunca» (así la comparación yo/curso siempre mide lo mismo).
 - El navegador recuerda que ya se respondió (`localStorage`), pero no hay forma de impedir del todo que alguien responda dos veces
   (borrando datos del navegador, otro celular). Tenelo en cuenta al interpretar los números.
 
-## Borrar datos
+## Reiniciar la encuesta
 
-La tarjeta roja del panel elimina todas las respuestas (hay que escribir `BORRAR`). No se puede deshacer.
+La tarjeta roja del panel elimina todas las respuestas (hay que escribir `BORRAR`) y **habilita de nuevo a quienes ya respondieron**. No se puede deshacer.
+
+Cómo funciona: cada celular recuerda en qué «ronda» respondió (`localStorage`). La ronda vigente está en el documento `config/estado` de Firestore, junto a `abierta`; al reiniciar, el panel guarda un número nuevo y, la próxima vez que alguien abra el enlace, el celular ve que la ronda cambió y muestra el formulario. No hace falta cambiar `firestore.rules`. Sigue siendo un control «una vez por dispositivo»: no impide responder desde otro navegador o en modo incógnito.
 
 ## Aviso a la dirección
 
